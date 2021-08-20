@@ -3,3 +3,18 @@
     padding: 1em;
     border-radius: 5px
 }
+
+.goTopBtn {
+    height: 50px;
+    width: 50;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    opacity: 0.1;
+    filter: alpha(opacity=40);
+}
+
+.goTopBtn:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
