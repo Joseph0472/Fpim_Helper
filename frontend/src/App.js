@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
-import Input from './components/Input.js';
+import ItemQuery from './components/ItemQuery.js';
+import ItemLoadAndUpdate from './components/ItemLoadAndUpdate'
 
 
 const App = () => {
   return (
     <div>
-      <Input />
+      <ItemLoadAndUpdate />
+      <ItemQuery />
     </div>
   );
 }

@@ -8,7 +8,6 @@ const OnelinkItem = require('../models/onelink')
 router.get('/', async (req, res) => {
     try {
         const allItems = await FPIMItem.find()
-        await console.log(allItems.length)
         res.json(allItems)
     } catch (err) {
         res.status(500).json({ message: err.message })
@@ -35,14 +34,11 @@ router.get('/', async (req, res) => {
                 {"onelinkCode" : regex("manufacturerPartNum")}, // manu can refer to diff columns
             ]
         })//   keyword in a string: /.*keyword.*/i
-        await console.log(matchedItems.length)
         res.json({fpim: matchedItems, onelink: matchedOnelinkItems})
     } catch (err) {
         res.status(500).json({ message: err.message })
     }
 })
-
-
 
 //Creating One
 router.post('/', async (req, res) => {

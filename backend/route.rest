@@ -8,3 +8,16 @@ Content-Type: application/json
 {
     "functionalName": "drug"
 }
+
+###
+
+POST http://localhost:5000/dhb
+Content-Type: application/json
+
+{
+    "itemComment":"blah"
+}
+
+###
+
+GET http://localhost:5000/dhb

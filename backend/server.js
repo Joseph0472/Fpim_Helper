@@ -25,6 +25,8 @@ app.use(express.json())
 
 const fpimRouter = require('./routes/fpim')
 app.use('/fpim', fpimRouter)
+const dhbRouter = require('./routes/DHBLandQ')
+app.use('/dhb', dhbRouter)
 
 
 app.listen(port, () => {
