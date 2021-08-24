@@ -22,13 +22,13 @@ export const getAllDHBItems = async () => {
 }
 
 export const saveAllDHBItems = async (items) => {
-  console.log(items)
-  fetch('/dhb', {
+  const response = await fetch('/dhb', {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: JSON.stringify(items) 
   })
+  console.log(response.status)
+  return response.status
 }

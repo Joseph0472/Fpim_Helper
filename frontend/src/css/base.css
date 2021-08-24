@@ -3,11 +3,12 @@
 .resultContainer {
     padding: 0.5em;
     border: black;
+    height: 300px;
+    overflow: auto;
 }
 
 .itemLoadAndUpdateContainer {
   padding: 0.5em;
-  width: 900px;
   height: 200px;
   overflow: auto;
 }
@@ -37,11 +38,24 @@
     filter: alpha(opacity=100);
 }
 
+.saveBtn {
+  position: fixed;
+  border-radius: 2px;
+}
+
+.saveMsg {
+  border-left: 1000px;
+  position: fixed;
+}
+
 /* Table */
 
 table {
     border-collapse: separate;
     border-spacing: 0;
+  }
+  table tbody {
+    overflow: auto;
   }
   table tr th,
   table td {
@@ -53,6 +67,9 @@ table {
   table tr th:first-child,
   table td:first-child {
     border-left: 1px solid #bbb;
+  }
+  table tr:focus-within {
+    background-color: #C0C0C0;
   }
   table tr th {
     background: #eee;

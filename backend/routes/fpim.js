@@ -27,14 +27,15 @@ router.get('/', async (req, res) => {
                 {"subBrandName": regex("subBrandName")},
                 {"brandName": regex("brandName")},
             ]
-        }) // keyword in a string: /.*keyword.*/i
-        const matchedOnelinkItems = await OnelinkItem.find({
-            $or: [
-                {"manufacturerPartNum": regex("manufacturerPartNum")},
-                {"onelinkCode" : regex("manufacturerPartNum")}, // manu can refer to diff columns
-            ]
-        })//   keyword in a string: /.*keyword.*/i
-        res.json({fpim: matchedItems, onelink: matchedOnelinkItems})
+        }).sort({itemNumber:-1}) // keyword in a string: /.*keyword.*/i
+        // Currently don't proceed onelink items.
+        // const matchedOnelinkItems = await OnelinkItem.find({
+        //     $or: [
+        //         {"manufacturerPartNum": regex("manufacturerPartNum")},
+        //         {"onelinkCode" : regex("manufacturerPartNum")}, // manu can refer to diff columns
+        //     ]
+        // })//   keyword in a string: /.*keyword.*/i
+        res.json({fpim: matchedItems, onelink: []})
     } catch (err) {
         res.status(500).json({ message: err.message })
     }

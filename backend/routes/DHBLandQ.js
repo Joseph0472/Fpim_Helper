@@ -26,16 +26,21 @@ router.post('/', async (req, res) => {
 })
 
 // Modifying the entire file
-router.patch('/', async(req, res) => {
+router.patch('/', async (req, res) => {
     //req.body should be an array of objects
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     try {
-        console.log("patching req")
+        console.log("Saving at: " + time)
         //console.log(req.body[0]);
         for(let i=0; i<req.body.length; i++) {
             var changedOne = req.body[i]
             var changedOneID = req.body[i]._id;
             await DHBItem.findOneAndReplace({_id: changedOneID}, changedOne)  
         }
+        await res.status(204)
+        await res.send("Successfully saved")
+        await console.log("Saved")
     } catch (err) {
         res.status(400).json({ message: err.message })
     }

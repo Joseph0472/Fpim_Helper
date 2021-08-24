@@ -95,7 +95,7 @@ const ItemQuery = () => {
                 <th>Brand Name</th>
                 <th>Net Content</th>
               </tr>
-              {itemsOtherSource.length <= 1000 ? itemsOtherSource.map(element => 
+              {itemsOtherSource.length <= 10000 ? itemsOtherSource.map(element => 
               <tbody>
                 <td>{element.manufacturerPartNum}</td>
                 <td>{element.onelinkCode}</td>
@@ -103,7 +103,7 @@ const ItemQuery = () => {
                 <td>{element.brandName}</td>
                 <td>{element.netContent}</td>
               </tbody>
-              ): <tr><h1>Too many results</h1></tr>}
+              ): <tr><h1>Too many results, add details</h1></tr>}
           </table>
           :
           <div><p>No results found.</p></div>}
