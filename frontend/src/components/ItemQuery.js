@@ -46,6 +46,7 @@ const ItemQuery = () => {
   useEffect(async ()=>{
     var data = await searchByKeyWords(itemInfo);
     await setItems(data.fpim)
+    await console.log(data.fpim)
     await setItemsOtherSource(data.onelink)
   },[itemInfo])
     

@@ -20,7 +20,30 @@
     border-bottom: 2px solid gray;
     margin: 0.5em;
     padding: 0.5em;
-    border-radius: 5px
+    border-radius: 5px;
+}
+
+.evidenceIpt {
+  width: 55px;
+}
+.commentIpt {
+  width: 55px;
+}
+.manuNumIpt {
+  width: 70px;
+}
+.fNameIpt {
+  width: 70px;
+}
+
+.sBNameIpt {
+  width: 70px;
+}
+.bNameIpt {
+  width: 70px;
+}
+.nCIpt {
+  width: 30px;
 }
 
 .goTopBtn {
@@ -69,7 +92,7 @@ table {
     border-left: 1px solid #bbb;
   }
   table tr:focus-within {
-    background-color: #C0C0C0;
+    background-color: #bbb;
   }
   table tr th {
     background: #eee;
