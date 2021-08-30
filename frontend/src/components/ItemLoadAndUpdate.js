@@ -57,13 +57,13 @@ function ItemLoadAndUpdate() {
                     items.map((element, index) =>
                     <tr>
                     <td>{index}</td> 
-                    <td><input className="evidenceIpt" value={element.evidence} name={index} title="evidence" onChange={(e)=>handleChange(e)} onClick={()=>navigator.clipboard.writeText(element.evidence)}></input></td>
+                    <td><input className="evidenceIpt" value={element.evidence} name={index} title="evidence" onChange={(e)=>handleChange(e)} onClick={()=>window.open(element.evidence, "_blank", "toolbar=yes,memubar=yes,top=500,left=1000,width=1000,height=1000")}></input></td>
                     <td><input className="commentIpt" value={element.itemComment} name={index} title="itemComment" onChange={(e)=>handleChange(e)}></input></td>
                     <td><input className="manuNumIpt" value={element.manufacturerPartNum} name={index} title="manufacturerPartNum" onChange={(e)=>handleChange(e)} onClick={()=>navigator.clipboard.writeText(element.manufacturerPartNum)}></input></td>
-                    <td><input className="fNameIpt" value={element.functionalName} name={index} title="functionalName" onChange={(e)=>handleChange(e)}></input></td>
+                    <td><input className="fNameIpt" value={element.functionalName} name={index} title="functionalName" onChange={(e)=>handleChange(e)} onClick={()=>navigator.clipboard.writeText(element.functionalName)}></input></td>
                     <td><input className="vIpt" value={element.variant} name={index} title="variant" onChange={(e)=>handleChange(e)}></input></td>
                     <td><input className="sBNameIpt" value={element.subBrandName} name={index} title="subBrandName" onChange={(e)=>handleChange(e)}></input></td>
-                    <td><input className="bNameIpt" value={element.brandName} name={index} title="brandName" onChange={(e)=>handleChange(e)}></input></td>
+                    <td><input className="bNameIpt" value={element.brandName} name={index} title="brandName" onChange={(e)=>handleChange(e)} ></input></td>
                     <td><input className="nCIpt" value={element.netContent} name={index} title="netContent" onChange={(e)=>handleChange(e)}></input></td>
                     </tr>
                     ):<div></div>}

@@ -5,7 +5,7 @@ const DHBItem = require('../models/dhb')
 //Getting All
 router.get('/', async (req, res) => {
     try {
-        const allItems = await DHBItem.find()
+        const allItems = await DHBItem.find().sort({brandName:1})
         await res.json(allItems)
     } catch (err) {
         res.status(500).json({ message: err.message })
