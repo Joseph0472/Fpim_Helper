@@ -41,6 +41,7 @@ const ItemQuery = () => {
       subBrandName: "",
       brandName: "",
     })
+    
   }
 
   useEffect(async ()=>{
@@ -83,7 +84,7 @@ const ItemQuery = () => {
                 <td>{element.brandName}</td>
                 <td>{element.netContent}</td>
               </tbody>
-              ) : <tr><h1>Too many results, add details</h1></tr>}
+              ) : <tr><h4>Too many results, add details</h4></tr>}
               <br/>
               <br/>
               <h3><strong>OneLink</strong></h3>

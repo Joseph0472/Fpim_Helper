@@ -1,12 +1,18 @@
 const express = require('express')
 const router = express.Router()
 const DHBItem = require('../models/dhb')
+const FPIMItem = require('../models/fpim')
+
 
 //Getting All
 router.get('/', async (req, res) => {
     try {
         const allItems = await DHBItem.find().sort({brandName:1})
         await res.json(allItems)
+        // const cataItems = await FPIMItem.find()
+        // allItems.forEach(element => {
+        //     if(element.)
+        // });
     } catch (err) {
         res.status(500).json({ message: err.message })
     }
